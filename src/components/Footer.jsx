@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">            <div className="footer-logo">
-              <i className="fas fa-car-battery"></i>
+              <img src="/images/logo/logoST.svg" alt="StarTron Logo" className="logo-image" />
               <span>StarTron Solutions</span>
             </div>
             <p className="footer-text">

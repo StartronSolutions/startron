@@ -1,0 +1,158 @@
+/* Theme Selector Styles */
+.theme-selector {
+  position: relative;
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.theme-selector-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  justify-content: space-between;
+}
+
+.theme-selector-button:hover {
+  background: var(--hover-bg);
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.theme-selector-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-color-alpha);
+}
+
+.theme-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.theme-text {
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+  color: var(--text-secondary);
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.theme-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  min-width: 140px;
+  z-index: 1000;
+  overflow: hidden;
+  animation: dropdownFade 0.2s ease;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+.theme-option:hover {
+  background: var(--hover-bg);
+}
+
+.theme-option.active {
+  background: var(--primary-color-alpha);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.theme-label {
+  flex: 1;
+}
+
+.check-mark {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+/* Animations */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .theme-selector {
+    margin-left: 0.5rem;
+  }
+  
+  .theme-selector-button {
+    padding: 0.4rem 0.6rem;
+    min-width: 100px;
+    font-size: 0.8rem;
+  }
+  
+  .theme-text {
+    display: none; /* Esconde texto no mobile, mostra só ícone */
+  }
+  
+  .header-actions {
+    gap: 0.5rem;
+  }
+  
+  .theme-dropdown {
+    min-width: 120px;
+    right: 0;
+  }
+  
+  .theme-option {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-selector-button {
+    min-width: auto;
+    padding: 0.4rem;
+  }
+  
+  .theme-dropdown {
+    right: -10px;
+    min-width: 110px;
+  }
+}

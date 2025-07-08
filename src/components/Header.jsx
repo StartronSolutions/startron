@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Header = ({ currentSection, sections }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,7 +49,7 @@ const Header = ({ currentSection, sections }) => {
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo" onClick={handleNavClick}>
-            <i className="fas fa-car-battery"></i>
+            <img src="/images/logo/logoST.svg" alt="StarTron Logo" className="logo-image" />
             <span>StarTron</span>
           </Link>
           
@@ -68,15 +69,18 @@ const Header = ({ currentSection, sections }) => {
             </ul>
           </nav>
           
-          <button 
-            className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
-            onClick={toggleMobileMenu}
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <div className="header-actions">
+            <ThemeToggle />
+            <button 
+              className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
+              onClick={toggleMobileMenu}
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
       </div>
     </header>

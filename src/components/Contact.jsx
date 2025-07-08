@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Button from './Button';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ const Contact = () => {
     {
       icon: 'fas fa-phone',
       title: 'Telefone',
-      details: [import.meta.env.VITE_CONTACT_PHONE || '(32) 9999-9999', 'Atendimento 24 horas']
+      details: [import.meta.env.VITE_CONTACT_PHONE || '(32) 9999-9998', 'Atendimento 24 horas']
     },
     {
       icon: 'fas fa-envelope',
@@ -62,7 +63,7 @@ const Contact = () => {
         phone: formData.phone || 'Não informado',
         service: formData.service,
         message: formData.message,
-        to_email: import.meta.env.VITE_CONTACT_EMAIL || 'startronsolutions@outlook.com'
+        to_email: import.meta.env.VITE_CONTACT_EMAIL || 'contato@startronsolutions.com.br'
       };
 
       await emailjs.send(
@@ -184,23 +185,17 @@ const Contact = () => {
               ></textarea>
             </div>
             
-            <button
+            <Button
               type="submit"
-              className={`btn btn-primary btn-full ${isSubmitting ? 'loading' : ''}`}
+              variant="primary"
+              size="large" 
+              loading={isSubmitting}
               disabled={isSubmitting}
+              className="btn-full"
             >
-              {isSubmitting ? (
-                <>
-                  <i className="fas fa-spinner fa-spin"></i>
-                  Enviando...
-                </>
-              ) : (
-                <>
-                  <i className="fas fa-paper-plane"></i>
-                  Enviar Mensagem
-                </>
-              )}
-            </button>
+              <i className="fas fa-paper-plane"></i>
+              {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+            </Button>
             
             {submitStatus === 'success' && (
               <div className="form-message success">

@@ -1,0 +1,131 @@
+/* Melhorias específicas para o tema escuro */
+:root.dark .header {
+  background-color: rgba(30, 37, 50, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom-color: #2d3748;
+  opacity: 0.98;
+}
+
+:root.dark .hero::before {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%232d3748" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+  opacity: 0.4;
+}
+
+/* Footer no tema escuro */
+:root.dark .footer {
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+:root.dark .footer-section h3 {
+  color: #f7fafc;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+:root.dark .footer-text {
+  color: #a0aec0;
+}
+
+:root.dark .footer-links a {
+  color: #a0aec0;
+  transition: color 0.2s ease;
+}
+
+:root.dark .footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+:root.dark .footer-contact .contact-item,
+:root.dark .footer-hours .hours-item {
+  color: #a0aec0;
+}
+
+:root.dark .footer-contact i {
+  color: var(--secondary-color);
+}
+
+:root.dark .footer-hours strong {
+  color: #e2e8f0;
+}
+
+:root.dark .footer-bottom {
+  border-top: 1px solid #2d3748;
+}
+
+:root.dark .footer-bottom p {
+  color: #a0aec0;
+}
+
+:root.dark .social-link {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+:root.dark .social-link:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+:root.dark .service-card::before {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  opacity: 0.8;
+}
+
+/* Melhoria nos botões do tema escuro */
+:root.dark .form-group input:focus,
+:root.dark .form-group select:focus,
+:root.dark .form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  border-color: #4299e1;
+}
+
+/* Cards com melhor contraste no escuro */
+:root.dark .feature-card,
+:root.dark .service-card,
+:root.dark .contact-item,
+:root.dark .stat-card {
+  border: 1px solid var(--border-color);
+}
+
+:root.dark .feature-card:hover,
+:root.dark .service-card:hover,
+:root.dark .contact-item:hover,
+:root.dark .stat-card:hover {
+  border-color: #4a5568;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Animação de flutuação para ícones no tema escuro */
+@keyframes glowDark {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(37, 99, 235, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(37, 99, 235, 0.5));
+  }
+  100% {
+    filter: drop-shadow(0 0 2px rgba(37, 99, 235, 0));
+  }
+}
+
+:root.dark .service-icon,
+:root.dark .feature-icon,
+:root.dark .footer-logo i,
+:root.dark .hero-icon {
+  animation: glowDark 3s infinite ease-in-out;
+}
+
+:root.dark .service-card,
+:root.dark .feature-card {
+  background: linear-gradient(145deg, #1e2532, #1a202c);
+}
+
+:root.dark .footer-logo .logo-image {
+  filter: brightness(1.2);
+}
+
+:root.dark .social-link i {
+  color: #e2e8f0;
+}

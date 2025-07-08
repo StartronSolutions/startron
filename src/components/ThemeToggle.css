@@ -1,0 +1,101 @@
+/* Theme Toggle Styles */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background: var(--hover-bg);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-color-alpha);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animação suave de rotação */
+.theme-icon.light {
+  transform: rotate(0deg);
+}
+
+.theme-icon.dark {
+  transform: rotate(180deg);
+}
+
+/* Hover effects específicos */
+.theme-toggle:hover .theme-icon {
+  transform: scale(1.1);
+}
+
+.theme-toggle:hover .theme-icon.light {
+  transform: scale(1.1) rotate(0deg);
+}
+
+.theme-toggle:hover .theme-icon.dark {
+  transform: scale(1.1) rotate(180deg);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-left: 0.5rem;
+  }
+  
+  .theme-icon {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-toggle {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.25rem;
+  }
+  
+  .theme-icon {
+    font-size: 1rem;
+  }
+}
+
+/* Dark theme specific styles */
+.dark .theme-toggle {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.dark .theme-toggle:hover {
+  background: var(--hover-bg);
+  border-color: var(--primary-color);
+}

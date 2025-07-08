@@ -48,7 +48,7 @@ const About = () => {  const stats = [
             </p>
             <p>
               Com anos de experiência, reformamos alternadores e motores desde carros de passeio 
-              até grandes máquinas de mineração como escavadeiras CAT, Komatsu, Volvo e outras 
+              até grandes máquinas de mineração como escavadeiras, caminhões, CAT, Komatsu, Volvo e outras 
               marcas, sempre com excelência, rapidez e <strong>garantia de qualidade</strong>.
             </p>
           </div>

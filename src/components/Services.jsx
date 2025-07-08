@@ -36,6 +36,12 @@ const Services = () => {  const services = [
       title: 'Sistemas de Energia',
       description: 'Manutenção completa de sistemas de energia para todos os equipamentos.',
       features: ['Alternadores industriais', 'Baterias de alta capacidade', 'Inversores de potência', 'Geradores auxiliares']
+    },
+    {
+      icon: 'fas fa-snowflake',
+      title: 'Ar Condicionado',
+      description: 'Instalação, manutenção e reparo de sistemas de ar condicionado veicular.',
+      features: ['Diagnóstico do sistema', 'Recarga de gás refrigerante', 'Troca de compressores', 'Limpeza de evaporadores']
     }
   ];
 
@@ -44,7 +50,7 @@ const Services = () => {  const services = [
       <div className="container">        <div className="section-header">
           <h2 className="section-title">Serviços Especializados</h2>
           <p className="section-subtitle">
-            Soluções completas para máquinas de mineração, elétrica automotiva e sistemas eletrônicos
+            Soluções completas para máquinas de mineração, elétrica automotiva, ar condicionado e sistemas eletrônicos
           </p>
         </div>
         
